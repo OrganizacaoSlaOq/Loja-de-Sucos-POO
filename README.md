@@ -28,7 +28,7 @@ Loja de Suco
  
 ### d.	Program.cs
 
-##5)	Funcionalidades
+## 5)	Funcionalidades
 1. Criar 
 2.	Salvar
 3.	Talvez exportar
