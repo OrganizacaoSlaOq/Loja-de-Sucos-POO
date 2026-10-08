@@ -2,10 +2,10 @@
 Loja de Suco
 
 ## Integrantes: 
-Ethan Daniel Gomes da Silva
-Guilherme Julyan Alves de Sousa
-João Pedro Garcia Gomes
-Lucas Balduino da Silva
+- Ethan Daniel Gomes da Silva
+- Guilherme Julyan Alves de Sousa
+- João Pedro Garcia Gomes
+- Lucas Balduino da Silva
 ## 1.	Líder: João Pedro Garcia Gomes
 ## 2.	Arquitetura: MVC
 ## 3.	Tema: Loja de suco
