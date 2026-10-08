@@ -5,7 +5,7 @@ public class Funcionario : Pessoa
     
     public override string ToString()
     {
-        return $"---------- DADOS DO FUNCIONÁRIO ----------\n" +
+        return $"----------Dados Do Funcionário----------\n" +
                $"{base.ToString()}" +
                $"Cargo: {Cargo}" +
                $"Salaário {Salario:C2}";
