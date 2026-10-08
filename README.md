@@ -33,7 +33,7 @@ Lucas Balduino da Silva
 2.	Salvar
 3.	Talvez exportar
 
-##6)	Tempo planejado para conclusão do código
+## 6)	Tempo planejado para conclusão do código
 15 dias
      
 
