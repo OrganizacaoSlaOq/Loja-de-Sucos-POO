@@ -8,7 +8,7 @@ public class Suco
     public decimal Preco { get; set; }
     public string Adicionais { get; set; }
 
-    public Suco(string id, string nomeSuco, string descricao, decimal preco, string adicionais)
+    public Suco(string nomeSuco, string descricao, decimal preco, string adicionais)
     {
         UltimoId++;
         Id = UltimoId;
