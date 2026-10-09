@@ -10,7 +10,7 @@ public class Pessoa
     public Telefone Telefone { get; set; }
     public Endereco Endereco { get; set; }
 
-    public Pessoa(string id, string nome, string cpf, string email, DateTime dataNascimento, Telefone telefone,
+    public Pessoa(string nome, string cpf, string email, DateTime dataNascimento, Telefone telefone,
         Endereco endereco)
     {
         UltimoId++;
