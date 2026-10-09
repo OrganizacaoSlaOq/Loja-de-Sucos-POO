@@ -1,5 +1,5 @@
 using bora_toma_uma;
 Menu menu = new Menu();
-menu.TituloAbertura();
+menu.MenuIniciar();
 
 // Consegui diminuir o program - ethan
