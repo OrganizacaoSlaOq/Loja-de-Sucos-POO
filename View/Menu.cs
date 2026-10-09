@@ -1,82 +1,132 @@
+using static Console;
+
 public class Menu
 {
     public void MenuIniciar()
     {
-        
+        TituloAbertura();
+        WriteLine("============================\n");
+
+        string opc;
+
+        do
+        {
+            WriteLine("Bem vindo ao menu do Bora de Suco! Escolha uma das opções para continuar:\n");
+            WriteLine("1 - ");
+            WriteLine("2 - ");
+            WriteLine("3 - ");
+            WriteLine("4 - ");
+            WriteLine("5 - ");
+            WriteLine("0 - Sair do programa");
+
+            Write("\n>>> ");
+
+            opc = ReadLine();
+
+            switch (opc)
+            {
+                case "1":
+                    break;
+
+                case "2":
+                    break;
+
+                case "3":
+                    break;
+
+                case "4":
+                    break;
+
+                case "5":
+                    break;
+
+                case "0":
+                    ForegroundColor = ConsoleColor.Cyan;
+                    WriteLine("\nVolte Sempre!!!");
+                    Thread.Sleep(1000);
+                    break;
+
+                default:
+                    Write("Opção inválida, tente novamente...");
+                    ReadKey();
+                    Clear();
+                    break;
+            }
+        } while (opc != "0");
     }
     
     public void TituloAbertura()
     {
-        Console.WriteLine("Tecle qualquer tecla para iniciar");
-        Console.ReadKey();
-        Console.Clear();
-        Console.Write("Iniciando");
+        WriteLine("Tecle qualquer tecla para iniciar");
+        ReadKey();
+        Clear();
+        Write("Iniciando");
         Thread.Sleep(500);
-        Console.Write(".");
-        Console.Beep(5000, 100);
+        Write(".");
+        Beep(5000, 100);
         Thread.Sleep(500);
-        Console.Write(".");
-        Console.Beep(5000, 100);
+        Write(".");
+        Beep(5000, 100);
         Thread.Sleep(500);
-        Console.Write(".");
-        Console.Beep(5000, 100);
+        Write(".");
+        Beep(5000, 100);
         Thread.Sleep(500);
-        Console.Clear();
-        Console.Beep(2500, 750);
-        Console.WriteLine("==============================================================");
+        Clear();
+        Beep(2500, 750);
+        WriteLine("==============================================================");
         Thread.Sleep(100);
-        Console.WriteLine("||                                                          ||");
+        WriteLine("||                                                          ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   +----+   +----+   +----+     +----+                    ||");
+        WriteLine("||   +----+   +----+   +----+     +----+                    ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   |     |  |    |   |     |    |    |                    ||");
+        WriteLine("||   |     |  |    |   |     |    |    |                    ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   |     |  |    |   |     |    |    |                    ||");
+        WriteLine("||   |     |  |    |   |     |    |    |                    ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   +----+   |    |   +----+     |----|                    ||");
+        WriteLine("||   +----+   |    |   +----+     |----|                    ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   |     |  |    |   |    \\     |    |                    ||");
+        WriteLine("||   |     |  |    |   |    \\     |    |                    ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   +----+   +----+   |     \\    |    |                    ||");
+        WriteLine("||   +----+   +----+   |     \\    |    |                    ||");
         Thread.Sleep(100);
-        Console.WriteLine("||                                                          ||");
+        WriteLine("||                                                          ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   +----+   +-----+                                       ||");
+        WriteLine("||   +----+   +-----+                                       ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   |     |  |                                             ||");
+        WriteLine("||   |     |  |                                             ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   |     |  |                                             ||");
+        WriteLine("||   |     |  |                                             ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   |     |  +----+                                        ||");
+        WriteLine("||   |     |  +----+                                        ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   |     |  |                                             ||");
+        WriteLine("||   |     |  |                                             ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   |     |  |                                             ||");
+        WriteLine("||   |     |  |                                             ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   +----+   +-----+                                       ||");
+        WriteLine("||   +----+   +-----+                                       ||");
         Thread.Sleep(100);
-        Console.WriteLine("||                                                          ||");
+        WriteLine("||                                                          ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   +----+   |     |   +----+   +----+                     ||");
+        WriteLine("||   +----+   |     |   +----+   +----+                     ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   |        |     |   |        |    |                     ||");
+        WriteLine("||   |        |     |   |        |    |                     ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   +----+   |     |   |        |    |                     ||");
+        WriteLine("||   +----+   |     |   |        |    |                     ||");
         Thread.Sleep(100);
-        Console.WriteLine("||        |   |     |   |        |    |                     ||");
+        WriteLine("||        |   |     |   |        |    |                     ||");
         Thread.Sleep(100);
-        Console.WriteLine("||        |   |     |   |        |    |                     ||");
+        WriteLine("||        |   |     |   |        |    |                     ||");
         Thread.Sleep(100);
-        Console.WriteLine("||   +----+   \\_____/   +----+   +----+                     ||");
+        WriteLine("||   +----+   \\_____/   +----+   +----+                     ||");
         Thread.Sleep(100);
-        Console.WriteLine("||                                                          ||");
+        WriteLine("||                                                          ||");
         Thread.Sleep(100);
-        Console.WriteLine("==============================================================");
+        WriteLine("==============================================================");
         Thread.Sleep(100);
-        Console.WriteLine("\n");
-        Console.WriteLine("Tecle qualquer tecla para continuar");
-        Console.ReadKey();
+        WriteLine("\n");
+        WriteLine("Tecle qualquer tecla para continuar");
+        ReadKey();
 
-        Console.WriteLine();
+        WriteLine();
     }
 }
