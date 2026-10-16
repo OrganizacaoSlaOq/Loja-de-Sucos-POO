@@ -23,7 +23,7 @@ public class Cadastros
         }
 
         Console.Write("Telefone: ");
-
+        cliente.Telefone = CadastroTelefone();
         Console.WriteLine("Endereco: ");
         
         return cliente;
@@ -56,16 +56,17 @@ public class Cadastros
         funcionario.Salario = Convert.ToDecimal(Console.ReadLine());
         
         Console.Write("Telefone: ");
-
+        funcionario.Telefone = CadastroTelefone();
         Console.WriteLine("Endereco: ");
         
         return funcionario;
     }
+    
     public Telefone CadastroTelefone()
     {
         Telefone telefone = new Telefone();
 
-        Console.WriteLine("============CADASTRO TELEFONE============");
+        Console.WriteLine("---------------Cadastro de Telefone---------------");
 
         Console.WriteLine("Numero: ");
         telefone.Numero = Console.ReadLine();
