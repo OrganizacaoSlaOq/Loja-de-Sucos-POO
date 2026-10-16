@@ -2,9 +2,9 @@ public class GenericController<T>
 {
     private readonly GenericRepository<T> _repository;
     private readonly GenericView<T> _view;
-    private readonly GenericServive<T> _service;
+    private readonly GenericService<T> _service;
 
-    public GenericController(GenericRepository<T> repo, GenericView<T> view, GenericServive<T> service)
+    public GenericController(GenericRepository<T> repo, GenericView<T> view, GenericService<T> service)
     {
         _repository = repo;
         _view = view;
