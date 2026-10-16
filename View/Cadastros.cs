@@ -98,7 +98,7 @@ public class Cadastros
         return endereco;
     }
 
-    public Suco SucoCadastro()
+    public Suco CadastrarSuco()
     {
         Suco suco = new Suco();
 
