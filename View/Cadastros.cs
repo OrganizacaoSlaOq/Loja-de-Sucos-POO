@@ -61,4 +61,19 @@ public class Cadastros
         
         return funcionario;
     }
+    public Telefone CadastroTelefone()
+    {
+        Telefone telefone = new Telefone();
+
+        Console.WriteLine("============CADASTRO TELEFONE============");
+
+        Console.WriteLine("Numero: ");
+        telefone.Numero = Console.ReadLine();
+        Console.WriteLine("DDD: ");
+        telefone.Ddd = Console.ReadLine();
+        Console.WriteLine("Operadora: ");
+        telefone.Operadora = Console.ReadLine();
+        
+        return telefone;
+    }
 }
