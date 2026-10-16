@@ -78,3 +78,25 @@ public class Cadastros
         return telefone;
     }
 }
+
+ public Endereco Cadastrardereco(Endereco End)
+    {
+        Console.WriteLine("insira os dados dos quais se pede: (aperte qualquer tecla para começar)");
+        Console.ReadKey();
+        Console.Clear();
+        Console.Write("Logradouro...:");
+        End.Logradouro = Console.ReadLine();
+        Console.Clear();
+        Console.Write("Bairro...:");
+        End.Bairro = Console.ReadLine();
+        Console.Clear();
+        Console.Write("Cep...:");
+        End.Cep = Console.ReadLine();
+        Console.Clear();
+        Console.Write("Cidade...:");
+        End.Cidade = Console.ReadLine();
+        Console.Clear();
+        Console.Write("Estado...:");
+        End.Uf = Console.ReadLine();
+        return End;
+    }
