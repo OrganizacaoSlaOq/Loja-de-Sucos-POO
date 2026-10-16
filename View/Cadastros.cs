@@ -103,14 +103,14 @@ public class Cadastros
         Suco suco = new Suco();
 
         Console.WriteLine("---------------Cadastro De Suco---------------");
-        
-        Console.Write("Nome do suco: ");
+    
+        Console.Write("Nome: ");
         suco.NomeSuco = Console.ReadLine();
         
-        Console.Write("Descrição do suco: ");
+        Console.Write("Descrição: ");
         suco.Descricao = Console.ReadLine();
         
-        Console.Write("Preço do suco: ");
+        Console.Write("Preço: ");
         suco.Preco = Convert.ToDecimal(Console.ReadLine());
         
         return suco;
