@@ -1,6 +1,6 @@
 public class Cadastros
 {
-    public Cliente CadastroPessoa()
+    public Cliente CadastroCliente()
     {
         Cliente cliente = new Cliente();
 
