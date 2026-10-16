@@ -25,7 +25,7 @@ public class Cadastros
         Console.Write("Telefone: ");
         cliente.Telefone = CadastroTelefone();
         Console.WriteLine("Endereco: ");
-        
+        cliente.Endereco = CadastrarEndereco();
         return cliente;
     }
     
@@ -58,7 +58,7 @@ public class Cadastros
         Console.Write("Telefone: ");
         funcionario.Telefone = CadastroTelefone();
         Console.WriteLine("Endereco: ");
-        
+        funcionario.Endereco = CadastrarEndereco();
         return funcionario;
     }
     
@@ -77,26 +77,25 @@ public class Cadastros
         
         return telefone;
     }
-}
-
- public Endereco Cadastrardereco(Endereco End)
+    
+    public Endereco CadastrarEndereco()
     {
-        Console.WriteLine("insira os dados dos quais se pede: (aperte qualquer tecla para começar)");
-        Console.ReadKey();
-        Console.Clear();
-        Console.Write("Logradouro...:");
-        End.Logradouro = Console.ReadLine();
-        Console.Clear();
-        Console.Write("Bairro...:");
-        End.Bairro = Console.ReadLine();
-        Console.Clear();
-        Console.Write("Cep...:");
-        End.Cep = Console.ReadLine();
+        Endereco endereco = new Endereco();
+     
+        Console.WriteLine("---------------Cadastro de Endereço---------------");
+        Console.Write("Logradouro: ");
+        endereco.Logradouro = Console.ReadLine();
+        Console.Write("Bairro: ");
+        endereco.Bairro = Console.ReadLine();
+        Console.Write("Cep: ");
+        endereco.Cep = Console.ReadLine();
         Console.Clear();
         Console.Write("Cidade...:");
-        End.Cidade = Console.ReadLine();
+        endereco.Cidade = Console.ReadLine();
         Console.Clear();
         Console.Write("Estado...:");
-        End.Uf = Console.ReadLine();
-        return End;
+        endereco.Uf = Console.ReadLine();
+        return endereco;
     }
+
+}
