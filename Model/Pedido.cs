@@ -5,17 +5,17 @@ public class Pedido
     public Cliente Cliente { get; set; }
     public Funcionario Atendente { get; set; }
     public Suco Suco { get; set; }
-    public string Extras { get; set; }
+    public string Adicional { get; set; }
     public decimal Preco {get; set;}
 
-    public Pedido(Cliente cliente, Funcionario atendente, Suco suco, string extras, decimal preco)
+    public Pedido(Cliente cliente, Funcionario atendente, Suco suco, string adicional, decimal preco)
     {
         UltimoId++;
         Id = UltimoId;
         Cliente = cliente;
         Atendente = atendente;
         Suco = suco;
-        Extras = extras;
+        Adicional = adincionaç;
         Preco = preco;
     }
 
@@ -28,6 +28,7 @@ public class Pedido
             $"{nameof(Cliente)}: {Cliente.Nome}\n" +
             $"{nameof(Atendente)}: {Atendente.Id}\n" +
             $"{nameof(Atendente)}: {Atendente.Nome}\n" +
+            $"{nameof(Adicional)}: {Adicional}\n" +
             $"{nameof(Suco)}: {Suco.NomeSuco}\n" +
             $"{nameof(Preco)}: {Preco:C2}";
     }
