@@ -15,7 +15,7 @@ public class Pedido
         Cliente = cliente;
         Atendente = atendente;
         Suco = suco;
-        Adicional = adincionaç;
+        Adicional = adicional;
         Preco = preco;
     }
 
