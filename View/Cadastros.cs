@@ -1,5 +1,8 @@
 public class Cadastros
 {
+    private bool genericBool = false; //Serve tanto pra ver se tem registro, e também pra whiles no geral
+    private string resposta;
+    
     public Cliente CadastroCliente()
     {
         Cliente cliente = new Cliente();
@@ -11,16 +14,23 @@ public class Cadastros
         cliente.Cpf = Console.ReadLine();
         Console.Write("Email: ");
         cliente.Email = Console.ReadLine();
-        Console.Write("Data de Nascimento: ");
-        string dataInformada = Console.ReadLine();
-        if (DateTime.TryParse(dataInformada, out DateTime data))
+
+        do
         {
-            cliente.DataNascimento = data;
-        }
-        else
-        {
-            Console.WriteLine("Erro na data");
-        }
+            Console.Write("Data de Nascimento: ");
+            string dataInformada = Console.ReadLine();
+        
+            if (DateTime.TryParse(dataInformada, out DateTime data))
+            {
+                cliente.DataNascimento = data;
+                genericBool = true;
+            }
+            else
+            {
+                Console.WriteLine("Erro na data");
+                genericBool = false;
+            }
+        } while (!genericBool);
 
         Console.Write("Telefone: ");
         cliente.Telefone = CadastroTelefone();
@@ -41,20 +51,45 @@ public class Cadastros
         Console.Write("Email: ");
         funcionario.Email = Console.ReadLine();
         Console.Write("Data de Nascimento: ");
-        string dataInformada = Console.ReadLine();
-        if (DateTime.TryParse(dataInformada, out DateTime data))
+        do
         {
-            funcionario.DataNascimento = data;
-        }
-        else
-        {
-            Console.WriteLine("Erro na data");
-        }
+            Console.Write("Data de Nascimento: ");
+            string dataInformada = Console.ReadLine();
+        
+            if (DateTime.TryParse(dataInformada, out DateTime data))
+            {
+                funcionario.DataNascimento = data;
+                genericBool = true;
+            }
+            else
+            {
+                Console.WriteLine("Erro na data");
+                genericBool = false;
+            }
+        } while (!genericBool);
+        
         Console.Write("Cargo: ");
         funcionario.Cargo = Console.ReadLine();
-        Console.Write("Salario: ");
-        funcionario.Salario = Convert.ToDecimal(Console.ReadLine());
-        
+        do
+        {
+            Console.Write("Salário: ");
+            resposta = Console.ReadLine();
+            try
+            {
+                funcionario.Salario = Convert.ToDecimal(resposta);
+                resposta = "";
+                genericBool = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                resposta = "";
+                genericBool = false;
+                throw;
+            }
+
+        }while(!genericBool);
+
         Console.Write("Telefone: ");
         funcionario.Telefone = CadastroTelefone();
         Console.WriteLine("Endereco: ");
@@ -90,10 +125,10 @@ public class Cadastros
         Console.Write("Cep: ");
         endereco.Cep = Console.ReadLine();
         Console.Clear();
-        Console.Write("Cidade...:");
+        Console.Write("Cidade:");
         endereco.Cidade = Console.ReadLine();
         Console.Clear();
-        Console.Write("Estado...:");
+        Console.Write("Estado:");
         endereco.Uf = Console.ReadLine();
         return endereco;
     }
@@ -108,8 +143,25 @@ public class Cadastros
         suco.NomeSuco = Console.ReadLine();
         Console.Write("Descrição: ");
         suco.Descricao = Console.ReadLine();
-        Console.Write("Preço: ");
-        suco.Preco = Convert.ToDecimal(Console.ReadLine());
+        do
+        {
+            Console.Write("Preço: ");
+            resposta = Console.ReadLine();
+            try
+            {
+                suco.Preco = Convert.ToDecimal(resposta);
+                resposta = "";
+                genericBool = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                resposta = "";
+                genericBool = false;
+                throw;
+            }
+
+        }while(!genericBool);
         
         return suco;
     }
@@ -121,8 +173,6 @@ public class Cadastros
         Console.WriteLine("--------------- Cadastro de Pedido ---------------");
         Console.WriteLine("\n");
         
-        bool genericBool = false; //Serve tanto pra ver se tem registro, e também pra whiles no geral
-        string resposta;
         decimal precoExtra = 0;
         
         do
@@ -148,6 +198,7 @@ public class Cadastros
         
         do
         {
+            Console.WriteLine("\n");
             Console.Write("Nome do Suco pedido:");
             resposta = Console.ReadLine();
             foreach (Suco suco in sucos.GetAll())
@@ -160,15 +211,20 @@ public class Cadastros
                 }
                 else
                 {
+                    Console.WriteLine("\n");
                     Console.WriteLine("Registro não encontrado");
+                    Console.WriteLine("Tecle qualquer tecla para tentar novamente.");
+                    Console.ReadKey();
                     genericBool = false;
                     resposta = "";
+                    Console.Clear();
                 }
             }
         } while (!genericBool);
 
         do
         {
+            Console.WriteLine("\n");
             Console.WriteLine("Tem algum adicional?");
             Console.WriteLine("1) Sim");
             Console.WriteLine("2) Não");
@@ -178,19 +234,25 @@ public class Cadastros
                 case "1":
                     pedido.Adicional = resposta;
                     resposta = "";
+                    Console.WriteLine("\n");
                     Console.WriteLine("Insira o preço do adicional");
                     precoExtra = Convert.ToDecimal(Console.ReadLine());
                     genericBool = true;
                     break;
                 case "2":
+                    Console.WriteLine("\n");
                     pedido.Adicional = "Sem adicional";
                     resposta = "";
                     precoExtra = 0;
                     genericBool = true;
                     break;
                 default:
+                    Console.WriteLine("\n");
                     Console.WriteLine("Opção não disponível");
+                    Console.WriteLine("Tecle qualquer tecla para tentar novamente.");
+                    Console.ReadKey();
                     genericBool = false;
+                    Console.Clear();
                     break;
             }
         } while (!genericBool);
@@ -201,9 +263,12 @@ public class Cadastros
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write(pedido.Preco);
         Console.ResetColor();
-
-        Console.WriteLine("Pedido Realizado Com Sucesso!");
+        
+        Console.WriteLine("\n");
+        Console.WriteLine("Pedido Realizado Com Sucesso!!!");
         Console.WriteLine("Tecle qualquer tecla para retornar ao menu.");
+        Console.ReadKey();
+        Console.Clear();
         
         return pedido;
     }
