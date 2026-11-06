@@ -1,21 +1,21 @@
-public class Delete
+public class Deletar
 {
     private string resposta;
     
-    public void DeletarCliente(GenericRepository<Cliente> repositorioClientes)
+    public void DeletarCliente(GenericController<Cliente> clientes)
     {
         Cliente clienteEscolhido;
         
         Console.WriteLine("Escolha um cliente para eliminar:");
         Console.WriteLine("Digite o Id do Cliente Escolhido:");
         
-        foreach (Cliente cliente in repositorioClientes.GetAll())
+        foreach (Cliente cliente in clientes.MimDePapai())
         {
             Console.WriteLine($"{cliente.Id}. {cliente.Nome}");
         }
         resposta = Console.ReadLine();
 
-        foreach (Cliente cliente in repositorioClientes.GetAll())
+        foreach (Cliente cliente in clientes.MimDePapai())
         {
             if (cliente.Id == Convert.ToInt32(resposta))
             {
@@ -27,7 +27,7 @@ public class Delete
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    repositorioClientes.Delete(cliente);
+                    clientes.Deletar(cliente);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -47,20 +47,20 @@ public class Delete
             }
         }
     }
-    public void DeletarFuncionario(GenericRepository<Funcionario> repositorioFuncionarios)
+    public void DeletarFuncionario(GenericController<Funcionario> funcionarios)
     {
         Funcionario funcionarioEscolhido;
         
         Console.WriteLine("Escolha um Funcionario para eliminar:");
         Console.WriteLine("Digite o Id do Funcionario Escolhido:");
         
-        foreach (Funcionario funcionario in repositorioFuncionarios.GetAll())
+        foreach (Funcionario funcionario in funcionarios.MimDePapai())
         {
             Console.WriteLine($"{funcionario.Id}. {funcionario.Nome}");
         }
         resposta = Console.ReadLine();
 
-        foreach (Funcionario funcionario in repositorioFuncionarios.GetAll())
+        foreach (Funcionario funcionario in funcionarios.MimDePapai())
         {
             if (funcionario.Id == Convert.ToInt32(resposta))
             {
@@ -72,7 +72,7 @@ public class Delete
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    repositorioFuncionarios.Delete(funcionario);
+                    funcionarios.Deletar(funcionario);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -92,20 +92,20 @@ public class Delete
             }
         }
     }
-    public void DeletarFuncionario(GenericRepository<Suco> repositorioSuco)
+    public void DeletarSuco(GenericController<Suco> sucos)
     {
         Suco sucoEscolhido;
         
         Console.WriteLine("Escolha um Suco para eliminar:");
         Console.WriteLine("Digite o Id do Suco Escolhido:");
         
-        foreach (Suco suco in repositorioSuco.GetAll())
+        foreach (Suco suco in sucos.MimDePapai())
         {
             Console.WriteLine($"{suco.Id}. {suco.NomeSuco}");
         }
         resposta = Console.ReadLine();
 
-        foreach (Suco suco in repositorioSuco.GetAll())
+        foreach (Suco suco in sucos.MimDePapai())
         {
             if (suco.Id == Convert.ToInt32(resposta))
             {
@@ -117,7 +117,7 @@ public class Delete
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    repositorioSuco.Delete(suco);
+                    sucos.Deletar(suco);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -137,20 +137,20 @@ public class Delete
             }
         }
     }
-    public void DeletarFuncionario(GenericRepository<Pedido> repositoriopedido)
+    public void DeletarPedido(GenericController<Pedido> pedidos)
     {
         Pedido pedidoEscolhido;
         
         Console.WriteLine("Escolha um pedido para eliminar:");
         Console.WriteLine("Digite o Id do pedido Escolhido:");
         
-        foreach (Pedido pedido in repositoriopedido.GetAll())
+        foreach (Pedido pedido in pedidos.MimDePapai())
         {
             Console.WriteLine($"{pedido.Id}. Cliente que fez o pedido: {pedido.Cliente.Nome}");
         }
         resposta = Console.ReadLine();
 
-        foreach (Pedido pedido in repositoriopedido.GetAll())
+        foreach (Pedido pedido in pedidos.MimDePapai())
         {
             if (pedido.Id == Convert.ToInt32(resposta))
             {
@@ -162,7 +162,7 @@ public class Delete
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    repositoriopedido.Delete(pedido);
+                    pedidos.Deletar(pedido);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -182,20 +182,20 @@ public class Delete
             }
         }
     }
-    public void DeletarFuncionario(GenericRepository<Endereco> repositorioEndereco)
+    public void DeletarEndereco(GenericController<Endereco> enderecos)
     {
         Endereco enderecoEscolhido;
         
         Console.WriteLine("Escolha um endereco para eliminar:");
         Console.WriteLine("Digite o Id do endereco Escolhido:");
         
-        foreach (Endereco endereco in repositorioEndereco.GetAll())
+        foreach (Endereco endereco in enderecos.MimDePapai())
         {
             Console.WriteLine($"{endereco.Id}. Logradouro: {endereco.Logradouro}");
         }
         resposta = Console.ReadLine();
 
-        foreach (Endereco endereco in repositorioEndereco.GetAll())
+        foreach (Endereco endereco in enderecos.MimDePapai())
         {
             if (endereco.Id == Convert.ToInt32(resposta))
             {
@@ -207,7 +207,7 @@ public class Delete
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    repositorioEndereco.Delete(endereco);
+                    enderecos.Deletar(endereco);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -227,20 +227,20 @@ public class Delete
             }
         }
     }
-    public void DeletarFuncionario(GenericRepository<Telefone> repositorioTelefone)
+    public void DeletarTelefone(GenericController<Telefone> telefones)
     {
         Telefone telefoneEscolhido;
         
         Console.WriteLine("Escolha um telefone para eliminar:");
         Console.WriteLine("Digite o Id do telefone Escolhido:");
         
-        foreach (Telefone telefone in repositorioTelefone.GetAll())
+        foreach (Telefone telefone in telefones.MimDePapai())
         {
             Console.WriteLine($"{telefone.Id}. ({telefone.Ddd}) {telefone.Numero}");
         }
         resposta = Console.ReadLine();
 
-        foreach (Telefone telefone in repositorioTelefone.GetAll())
+        foreach (Telefone telefone in telefones.MimDePapai())
         {
             if (telefone.Id == Convert.ToInt32(resposta))
             {
@@ -252,7 +252,7 @@ public class Delete
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM"|| resposta == "S")
                 {
-                    repositorioTelefone.Delete(telefone);
+                    telefones.Deletar(telefone);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO" || resposta == "NAO" || resposta == "N")
