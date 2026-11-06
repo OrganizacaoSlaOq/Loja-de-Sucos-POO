@@ -33,24 +33,14 @@ public class Pedido
             $"{nameof(Preco)}: {Preco:C2}";
     }
 
-    public void CalcularPrecoTotal(decimal precoSuco, string precoExtra)
-    {
-        decimal precoExtra_ = 0;
-        try
-        {
-            precoExtra_ = Convert.ToDecimal(precoExtra);
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("Não foi possível converter em decimal, a formatação está incorreta, tente novamente.");
-        }
-        catch (OverflowException)
-        {
-            Console.WriteLine("Não foi possível converter em decimal, O número é grande demais para converter, tente novamente.");
-        }
-            
-        decimal precoTotal = precoSuco + precoExtra_;
+       public decimal CalcularPrecoTotal(decimal precoExtra)
+    { 
+        decimal precoSuco = Suco.Preco;
+        
+        decimal precoTotal = precoSuco + precoExtra;
             
         Preco = precoTotal;
+        
+        return precoTotal;
     }
 }
