@@ -2,9 +2,9 @@ public class GenericController<T>
 {
     private readonly GenericRepository<T> _repository;
     private readonly GenericView<T> _view;
-    private readonly GenericService<T> _service;
+    private readonly GenericServive<T> _service;
 
-    public GenericController(GenericRepository<T> repo, GenericView<T> view, GenericService<T> service)
+    public GenericController(GenericRepository<T> repo, GenericView<T> view, GenericServive<T> service)
     {
         _repository = repo;
         _view = view;
@@ -12,6 +12,8 @@ public class GenericController<T>
     }
 
     public void Cadastrar(T item) => _repository.Add(item);
+    public void Deletar(T item) => _repository.Delete(item);
+    public IEnumerable<T> MimDePapai() => _repository.GetAll();
     
     public void Processar(string titulo, string arquivoCsv, string cabecalho, Func<T, string> regraConversao)
     {
