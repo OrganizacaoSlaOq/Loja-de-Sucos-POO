@@ -1,7 +1,3 @@
-using Nga.Model;
-
-namespace Nga.Menu;
-
 public class Delete
 {
     private string resposta;
