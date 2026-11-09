@@ -1,6 +1,6 @@
 public class Telefone
 {
-    private static int UltimoId = 0;
+    private static int UltimoId = 1;
     public int Id { get; set; } 
     public string Numero { get; set; }
     public string Ddd { get; set; }
