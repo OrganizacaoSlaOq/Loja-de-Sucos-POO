@@ -1,6 +1,6 @@
 public class Suco
 {
-    private static int UltimoId = 0; 
+    private static int UltimoId = 1; 
     
     public int Id { get; set; }
     public string NomeSuco { get; set; }
