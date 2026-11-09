@@ -21,13 +21,13 @@ public class Deletar
             {
                 clienteEscolhido = cliente;
                 resposta = "";
-                Console.WriteLine($"Confirma em deletar {cliente.Nome}?");
+                Console.WriteLine($"Confirma em deletar {clienteEscolhido.Nome}?");
                 Console.WriteLine("1) Sim");
                 Console.WriteLine("2) Não");
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    clientes.Deletar(cliente);
+                    clientes.Deletar(clienteEscolhido);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -66,13 +66,13 @@ public class Deletar
             {
                 funcionarioEscolhido = funcionario;
                 resposta = "";
-                Console.WriteLine($"Confirma em deletar {funcionario.Nome}?");
+                Console.WriteLine($"Confirma em deletar {funcionarioEscolhido.Nome}?");
                 Console.WriteLine("1) Sim");
                 Console.WriteLine("2) Não");
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    funcionarios.Deletar(funcionario);
+                    funcionarios.Deletar(funcionarioEscolhido);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -111,13 +111,13 @@ public class Deletar
             {
                 sucoEscolhido = suco;
                 resposta = "";
-                Console.WriteLine($"Confirma em deletar {suco.NomeSuco}?");
+                Console.WriteLine($"Confirma em deletar {sucoEscolhido.NomeSuco}?");
                 Console.WriteLine("1) Sim");
                 Console.WriteLine("2) Não");
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    sucos.Deletar(suco);
+                    sucos.Deletar(sucoEscolhido);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -156,13 +156,13 @@ public class Deletar
             {
                 pedidoEscolhido = pedido;
                 resposta = "";
-                Console.WriteLine($"Confirma em deletar o pedido de {pedido.Cliente.Nome}?");
+                Console.WriteLine($"Confirma em deletar o pedido de {pedidoEscolhido.Cliente.Nome}?");
                 Console.WriteLine("1) Sim");
                 Console.WriteLine("2) Não");
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    pedidos.Deletar(pedido);
+                    pedidos.Deletar(pedidoEscolhido);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -201,13 +201,13 @@ public class Deletar
             {
                 enderecoEscolhido = endereco;
                 resposta = "";
-                Console.WriteLine($"Confirma em deletar o endereco de {endereco.Logradouro}?");
+                Console.WriteLine($"Confirma em deletar o endereco de {enderecoEscolhido.Logradouro}?");
                 Console.WriteLine("1) Sim");
                 Console.WriteLine("2) Não");
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM")
                 {
-                    enderecos.Deletar(endereco);
+                    enderecos.Deletar(enderecoEscolhido);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO")
@@ -246,13 +246,13 @@ public class Deletar
             {
                 telefoneEscolhido = telefone;
                 resposta = "";
-                Console.WriteLine($"Confirma em deletar o telefone ({telefone.Ddd}) {telefone.Numero}?");
+                Console.WriteLine($"Confirma em deletar o telefone ({telefoneEscolhido.Ddd}) {telefoneEscolhido.Numero}?");
                 Console.WriteLine("1) Sim");
                 Console.WriteLine("2) Não");
                 resposta = Console.ReadLine().ToUpper();
                 if (resposta == "1" || resposta == "SIM"|| resposta == "S")
                 {
-                    telefones.Deletar(telefone);
+                    telefones.Deletar(telefoneEscolhido);
                     resposta = "";
                 }
                 else if (resposta == "2" || resposta == "NÃO" || resposta == "NAO" || resposta == "N")
