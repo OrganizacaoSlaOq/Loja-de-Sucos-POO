@@ -1,6 +1,6 @@
 public class Endereco
 {
-    private static int UltimoId = 0;
+    private static int UltimoId = 1;
     
     public int Id { get; set; }
     public string Logradouro { get; set; }
