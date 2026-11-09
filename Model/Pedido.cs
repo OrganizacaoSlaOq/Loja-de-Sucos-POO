@@ -1,6 +1,6 @@
 public class Pedido
 {
-    private static int UltimoId = 0;
+    private static int UltimoId = 1;
     public int Id { get; set; }
     public Cliente Cliente { get; set; }
     public Funcionario Atendente { get; set; }
