@@ -1,7 +1,5 @@
 public class Endereco
 {
-    private static int UltimoId = 1;
-    
     public int Id { get; set; }
     public string Logradouro { get; set; }
     public string Bairro { get; set; }
@@ -9,10 +7,13 @@ public class Endereco
     public string Cep { get; set; }
     public string Uf { get; set; }
 
-    public Endereco(string logradouro, string bairro, string cidade, string cep, string uf)
+    public Endereco()
     {
-        UltimoId++;
-        Id = UltimoId;
+    }
+
+    public Endereco(int id, string logradouro, string bairro, string cidade, string cep, string uf)
+    {
+        Id = id;
         Logradouro = logradouro;
         Bairro = bairro;
         Cidade = cidade;
@@ -20,13 +21,14 @@ public class Endereco
         Uf = uf;
     }
 
+
     public override string ToString()
     {
         return
             $"----------Dados do Endereco----------\n" +
             $"{nameof(Id)}: {Id}\n" +
             $"{nameof(Logradouro)}: {Logradouro}\n" +
-            $"{nameof(Bairro)}: {Bairro}" +
+            $"{nameof(Bairro)}: {Bairro}\n" +
             $"{nameof(Cidade)}: {Cidade}\n" +
             $"{nameof(Cep)}: {Cep}\n" +
             $"{nameof(Uf)}: {Uf}";
