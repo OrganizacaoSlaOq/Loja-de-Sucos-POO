@@ -1,15 +1,17 @@
 public class Telefone
 {
-    private static int UltimoId = 1;
     public int Id { get; set; } 
     public string Numero { get; set; }
     public string Ddd { get; set; }
     public string Operadora { get; set; }
 
-    public Telefone(string numero, string ddd, string operadora)
+    public Telefone()
     {
-        UltimoId++;
-        Id = UltimoId;
+    }
+
+    public Telefone(int id, string numero, string ddd, string operadora)
+    {
+        Id = id;
         Numero = numero;
         Ddd = ddd;
         Operadora = operadora;
@@ -17,7 +19,7 @@ public class Telefone
 
     public override string ToString()
     {
-        return $"{nameof(Id)}: {Operadora}" +
+        return $"{nameof(Id)}: {Id}" +
                $"({Ddd}) {Numero},\n" +
                $" {nameof(Operadora)}: {Operadora}";
     }
