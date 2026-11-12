@@ -1,7 +1,5 @@
 public class Pessoa
 {
-    private static int UltimoId = 1;
-
     public int Id { get; set; }
     public string Nome { get; set; }
     public string Cpf { get; set; }
@@ -13,11 +11,10 @@ public class Pessoa
     public Pessoa()
     {
     }
-    
-    public Pessoa(string nome, string cpf, string email, DateTime dataNascimento, Telefone telefone, Endereco endereco)
+
+    public Pessoa(int id, string nome, string cpf, string email, DateTime dataNascimento, Telefone telefone, Endereco endereco)
     {
-        UltimoId++;
-        Id = UltimoId;
+        Id = id;
         Nome = nome;
         Cpf = cpf;
         Email = email;
@@ -29,7 +26,6 @@ public class Pessoa
     public override string ToString()
     {
         return
-            $"ID: {Id}\n" +
             $"Nome: {Nome}\n" +
             $"CPF: {Cpf}\n" +
             $"Email: {Email}\n" +
