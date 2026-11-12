@@ -1,6 +1,0 @@
-var ctrlGenCliente = new GenericController<Cliente>(new GenericRepository<Cliente>(), new GenericView<Cliente>(), new GenericService<Cliente>());
-var ctrlGenPedido = new GenericController<Pedido>(new GenericRepository<Pedido>(), new GenericView<Pedido>(), new GenericService<Pedido>());
-var ctrlGenEndereco = new GenericController<Endereco>(new GenericRepository<Endereco>(), new GenericView<Endereco>(), new GenericService<Endereco>());
-var ctrlGenFuncionario= new GenericController<Funcionario>(new GenericRepository<Funcionario>(), new GenericView<Funcionario>(), new GenericService<Funcionario>());
-var ctrlGenSuco = new GenericController<Suco>(new GenericRepository<Suco>(), new GenericView<Suco>(), new GenericService<Suco>());
-var ctrlGenTelefone = new GenericController<Telefone>(new GenericRepository<Telefone>(), new GenericView<Telefone>(), new GenericService<Telefone>());
