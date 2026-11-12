@@ -1,21 +1,23 @@
 public class Pedido
 {
-    private static int UltimoId = 1;
     public int Id { get; set; }
     public Cliente Cliente { get; set; }
     public Funcionario Atendente { get; set; }
     public Suco Suco { get; set; }
-    public string Adicional { get; set; }
+    public string Extras { get; set; }
     public decimal Preco {get; set;}
 
-    public Pedido(Cliente cliente, Funcionario atendente, Suco suco, string adicional, decimal preco)
+    public Pedido()
     {
-        UltimoId++;
-        Id = UltimoId;
+    }
+
+    public Pedido(int id, Cliente cliente, Funcionario atendente, Suco suco, string extras, decimal preco)
+    {
+        Id = id;
         Cliente = cliente;
         Atendente = atendente;
         Suco = suco;
-        Adicional = adicional;
+        Extras = extras;
         Preco = preco;
     }
 
@@ -28,12 +30,11 @@ public class Pedido
             $"{nameof(Cliente)}: {Cliente.Nome}\n" +
             $"{nameof(Atendente)}: {Atendente.Id}\n" +
             $"{nameof(Atendente)}: {Atendente.Nome}\n" +
-            $"{nameof(Adicional)}: {Adicional}\n" +
             $"{nameof(Suco)}: {Suco.NomeSuco}\n" +
             $"{nameof(Preco)}: {Preco:C2}";
     }
 
-       public decimal CalcularPrecoTotal(decimal precoExtra)
+    public decimal CalcularPrecoTotal(decimal precoExtra)
     { 
         decimal precoSuco = Suco.Preco;
         
