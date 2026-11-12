@@ -1,9 +1,21 @@
 public class Cadastros
 {
-    public Cliente CadastroCliente()
+
+    public Cliente CadastroCliente(GenericController<Cliente> clienteController, GenericController<Telefone> telefoneController, GenericController<Endereco> enderecoController)
     {
+        bool genericBool = false; //Serve tanto pra ver se tem registro, e também pra whiles no geral
+
         Cliente cliente = new Cliente();
 
+        if (clienteController.MimDePapai().Any())
+        {
+            cliente.Id = clienteController.MimDePapai().Last().Id + 1;
+        }
+        else
+        {
+            cliente.Id = 1;
+        }
+        
         Console.WriteLine("--------------Cadastro De Cliente---------------");
         Console.Write("Nome: ");
         cliente.Nome = Console.ReadLine();
@@ -11,77 +23,120 @@ public class Cadastros
         cliente.Cpf = Console.ReadLine();
         Console.Write("Email: ");
         cliente.Email = Console.ReadLine();
-        Console.Write("Data de Nascimento: ");
-        string dataInformada = Console.ReadLine();
-        if (DateTime.TryParse(dataInformada, out DateTime data))
+        do
         {
-            cliente.DataNascimento = data;
-        }
-        else
-        {
-            Console.WriteLine("Erro na data");
-        }
+            Console.Write("Data de Nascimento: ");
+            string dataInformada = Console.ReadLine();
+            if (DateTime.TryParse(dataInformada, out DateTime data))
+            {
+                cliente.DataNascimento = data;
+                genericBool = false;
+            }
+            else
+            {
+                Console.WriteLine("Erro na data");
+                genericBool = true;
+            }
+        } while (genericBool);
 
         Console.Write("Telefone: ");
-        cliente.Telefone = CadastroTelefone();
+        cliente.Telefone = CadastroTelefone(telefoneController);
         Console.WriteLine("Endereco: ");
-        cliente.Endereco = CadastroEndereco();
+        cliente.Endereco = CadastroEndereco(enderecoController);
         return cliente;
     }
-    
-    public Funcionario CadastroFuncionario()
+
+    public Funcionario CadastroFuncionario(GenericController<Funcionario> funcionarioController, GenericController<Telefone> telefoneController, GenericController<Endereco> enderecoController)
     {
+        bool genericBool = false; //Serve tanto pra ver se tem registro, e também pra whiles no geral
+
         Funcionario funcionario = new Funcionario();
 
         Console.WriteLine("--------------Cadastro De Funcionário---------------");
+        
+        if (funcionarioController.MimDePapai().Any())
+        {
+            funcionario.Id = funcionarioController.MimDePapai().Last().Id + 1;
+        }
+        else
+        {
+            funcionario.Id = 1;
+        }
+        
         Console.Write("Nome: ");
         funcionario.Nome = Console.ReadLine();
         Console.Write("CPF: ");
         funcionario.Cpf = Console.ReadLine();
         Console.Write("Email: ");
         funcionario.Email = Console.ReadLine();
-        Console.Write("Data de Nascimento: ");
-        string dataInformada = Console.ReadLine();
-        if (DateTime.TryParse(dataInformada, out DateTime data))
+        do
         {
-            funcionario.DataNascimento = data;
-        }
-        else
-        {
-            Console.WriteLine("Erro na data");
-        }
+            Console.Write("Data de Nascimento: ");
+            string dataInformada = Console.ReadLine();
+            if (DateTime.TryParse(dataInformada, out DateTime data))
+            {
+                funcionario.DataNascimento = data;
+                genericBool = false;
+            }
+            else
+            {
+                Console.WriteLine("Erro na data");
+                genericBool = true;
+            }
+        } while (genericBool);
+
         Console.Write("Cargo: ");
         funcionario.Cargo = Console.ReadLine();
         Console.Write("Salario: ");
         funcionario.Salario = Convert.ToDecimal(Console.ReadLine());
-        
+
         Console.Write("Telefone: ");
-        funcionario.Telefone = CadastroTelefone();
+        funcionario.Telefone = CadastroTelefone(telefoneController);
         Console.WriteLine("Endereco: ");
-        funcionario.Endereco = CadastroEndereco();
+        funcionario.Endereco = CadastroEndereco(enderecoController);
         return funcionario;
     }
-    
-    public Telefone CadastroTelefone()
+
+    public Telefone CadastroTelefone(GenericController<Telefone> telefoneController)
     {
         Telefone telefone = new Telefone();
 
         Console.WriteLine("---------------Cadastro de Telefone---------------");
 
+        bool genericBool = false; //Serve tanto pra ver se tem registro, e também pra whiles no geral
+        
+        if (telefoneController.MimDePapai().Any())
+        {
+            telefone.Id = telefoneController.MimDePapai().Last().Id + 1;
+        }
+        else
+        {
+            telefone.Id = 1;
+        }
+        
         Console.WriteLine("Numero: ");
         telefone.Numero = Console.ReadLine();
         Console.WriteLine("DDD: ");
         telefone.Ddd = Console.ReadLine();
         Console.WriteLine("Operadora: ");
         telefone.Operadora = Console.ReadLine();
-        
+
         return telefone;
     }
-    
-    public Endereco CadastroEndereco()
+
+    public Endereco CadastroEndereco(GenericController<Endereco> enderecoController)
     {
         Endereco endereco = new Endereco();
-     
+
+        if (enderecoController.MimDePapai().Any())
+        {
+            endereco.Id = enderecoController.MimDePapai().Last().Id + 1;
+        }
+        else
+        {
+            endereco.Id = 1;
+        }
+        
         Console.WriteLine("---------------Cadastro de Endereço---------------");
         Console.Write("Logradouro: ");
         endereco.Logradouro = Console.ReadLine();
@@ -89,20 +144,27 @@ public class Cadastros
         endereco.Bairro = Console.ReadLine();
         Console.Write("Cep: ");
         endereco.Cep = Console.ReadLine();
-        Console.Clear();
         Console.Write("Cidade...:");
         endereco.Cidade = Console.ReadLine();
-        Console.Clear();
         Console.Write("Estado...:");
         endereco.Uf = Console.ReadLine();
         return endereco;
     }
 
-    public Suco CadastroSuco()
+    public Suco CadastroSuco(GenericController<Suco> sucoController)
     {
         Suco suco = new Suco();
 
         Console.WriteLine("---------------Cadastro De Suco---------------");
+
+        if (sucoController.MimDePapai().Any())
+        {
+            suco.Id = sucoController.MimDePapai().Last().Id + 1;
+        }
+        else
+        {
+            suco.Id = 1;
+        }
         
         Console.Write("Nome: ");
         suco.NomeSuco = Console.ReadLine();
@@ -110,29 +172,46 @@ public class Cadastros
         suco.Descricao = Console.ReadLine();
         Console.Write("Preço: ");
         suco.Preco = Convert.ToDecimal(Console.ReadLine());
-        
+
         return suco;
     }
-    
-    public Pedido CadastroPedido(GenericController<Cliente> clientes,  GenericController<Funcionario> atendentes, GenericController<Suco> sucos)
+
+
+    public Pedido CadastroPedido(GenericController<Pedido> pedidoController, GenericController<Cliente> clientes, GenericController<Funcionario> atendentes,
+        GenericController<Suco> sucos)
     {
-        
+
         Pedido pedido = new Pedido();
-        
+
         Console.WriteLine("--------------- Cadastro de Pedido ---------------");
         Console.WriteLine("\n");
+
+        if (pedidoController.MimDePapai().Any())
+        {
+            pedido.Id = pedidoController.MimDePapai().Last().Id + 1;
+        }
+        else
+        {
+            pedido.Id = 1;
+        }
         
         bool genericBool = false; //Serve tanto pra ver se tem registro, e também pra whiles no geral
         string resposta;
         decimal precoExtra = 0;
-        
         do
         {
-            Console.Write("Nome do Cliente que realizou o pedido: ");
-            resposta = Console.ReadLine();
+            Console.Write("ID do Cliente que realizou o pedido: ");
+
             foreach (Cliente cliente in clientes.MimDePapai())
             {
-                if (cliente.Nome == resposta)
+                Console.WriteLine($"{cliente.Id}. {cliente.Nome}");
+            }
+
+            resposta = Console.ReadLine();
+
+            foreach (Cliente cliente in clientes.MimDePapai())
+            {
+                if (cliente.Id.ToString() == resposta)
                 {
                     pedido.Cliente = cliente;
                     genericBool = true;
@@ -145,14 +224,23 @@ public class Cadastros
                     resposta = "";
                 }
             }
+
         } while (!genericBool);
+
         do
         {
-            Console.Write("Nome do Atendente que realizou o pedido: ");
+            Console.Write("ID do Atendente que realizou o pedido: ");
             resposta = Console.ReadLine();
             foreach (Funcionario atendente in atendentes.MimDePapai())
             {
-                if (atendente.Nome == resposta)
+                Console.WriteLine($"{atendente.Id}. {atendente.Nome}");
+            }
+
+            resposta = Console.ReadLine();
+
+            foreach (Funcionario atendente in atendentes.MimDePapai())
+            {
+                if (atendente.Id.ToString() == resposta)
                 {
                     pedido.Atendente = atendente;
                     genericBool = true;
@@ -166,14 +254,21 @@ public class Cadastros
                 }
             }
         } while (!genericBool);
-        
+
         do
         {
-            Console.Write("Nome do Suco pedido:");
+            Console.Write("ID do Suco que realizou o pedido: ");
             resposta = Console.ReadLine();
             foreach (Suco suco in sucos.MimDePapai())
             {
-                if (suco.NomeSuco == resposta)
+                Console.WriteLine($"{suco.Id}. {suco.NomeSuco}");
+            }
+
+            resposta = Console.ReadLine();
+
+            foreach (Suco suco in sucos.MimDePapai())
+            {
+                if (suco.Id.ToString() == resposta)
                 {
                     pedido.Suco = suco;
                     genericBool = true;
@@ -225,7 +320,7 @@ public class Cadastros
 
         Console.WriteLine("Pedido Realizado Com Sucesso!");
         Console.WriteLine("Tecle qualquer tecla para retornar ao menu.");
-        
+
         return pedido;
     }
 }
