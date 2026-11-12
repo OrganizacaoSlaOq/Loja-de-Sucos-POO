@@ -29,6 +29,11 @@ public class Deletar
                 {
                     clientes.Deletar(clienteEscolhido);
                     resposta = "";
+                    Console.WriteLine("\nTecle qualquer tecla pra voltar.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
+                    
                 }
                 else if (resposta == "2" || resposta == "NÃO")
                 {
@@ -74,6 +79,10 @@ public class Deletar
                 {
                     funcionarios.Deletar(funcionarioEscolhido);
                     resposta = "";
+                    Console.WriteLine("\nTecle qualquer tecla pra voltar.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
                 }
                 else if (resposta == "2" || resposta == "NÃO")
                 {
@@ -119,6 +128,10 @@ public class Deletar
                 {
                     sucos.Deletar(sucoEscolhido);
                     resposta = "";
+                    Console.WriteLine("\nTecle qualquer tecla pra voltar.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
                 }
                 else if (resposta == "2" || resposta == "NÃO")
                 {
@@ -164,6 +177,10 @@ public class Deletar
                 {
                     pedidos.Deletar(pedidoEscolhido);
                     resposta = "";
+                    Console.WriteLine("\nTecle qualquer tecla pra voltar.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
                 }
                 else if (resposta == "2" || resposta == "NÃO")
                 {
@@ -209,6 +226,10 @@ public class Deletar
                 {
                     enderecos.Deletar(enderecoEscolhido);
                     resposta = "";
+                    Console.WriteLine("\nTecle qualquer tecla pra voltar.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
                 }
                 else if (resposta == "2" || resposta == "NÃO")
                 {
@@ -254,6 +275,10 @@ public class Deletar
                 {
                     telefones.Deletar(telefoneEscolhido);
                     resposta = "";
+                    Console.WriteLine("\nTecle qualquer tecla pra voltar.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
                 }
                 else if (resposta == "2" || resposta == "NÃO" || resposta == "NAO" || resposta == "N")
                 {
